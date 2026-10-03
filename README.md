@@ -1,26 +1,57 @@
-# aihr-resume-job-matcher
-基于大模型与向量检索的 AI 智能岗位匹配与简历优化系统
-# AIHR 智能岗位匹配与简历优化项目
-## 📖项目简介
-本项目面向求职场景，解决岗位筛选耗时、简历优化缺少针对性建议的痛点。利用大模型完成简历与JD文本解析，结合向量检索实现岗位语义匹配；设计多维权重打分模型，输出岗位推荐列表，同时自动生成简历优化建议，提升简历与目标岗位的适配程度。
+# React + TypeScript + Vite
 
-## 🛠技术栈
-- Python：业务逻辑开发、文本预处理、打分计算
-- 大模型：简历字段抽取、JD需求拆解、简历文本润色
-- 向量模型：文本向量化、岗位库相似度检索排序
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## ✨核心功能模块
-1. **文本解析模块**
-调用大模型自动解析简历，提取专业背景、技术栈、项目经历、证书等信息；同时拆解招聘JD，提取硬性门槛、技能要求、软素质需求，生成标准化标签。
+Currently, two official plugins are available:
 
-2. **岗位匹配打分模块**
-采用多维度加权打分策略：硬性条件40%、技能匹配度35%、职业背景契合度25%。根据综合得分对岗位库排序，标注候选人优势与能力短板，输出推荐岗位清单。
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-3. **简历校验与优化模块**
-自动检测简历关键词缺失、经历描述不匹配、内容冗余等问题，输出可落地修改方案：包含删减冗余内容、补充项目关键词、润色经历描述三类建议。
+## Expanding the ESLint configuration
 
-## 📊项目指标
-- 岗位匹配精准度可达92%以上
-- 岗位筛选时间节约约80%
-- 简历优化后岗位适配度提升60%
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  extends: [
+    // other configs...
+    // Enable lint rules for React
+    reactX.configs['recommended-typescript'],
+    // Enable lint rules for React DOM
+    reactDom.configs.recommended,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
