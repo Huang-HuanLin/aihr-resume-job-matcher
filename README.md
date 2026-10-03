@@ -245,17 +245,3 @@ git push -u origin main
 
 ---
 
-## 📄 许可证
-
-MIT License © 2024 腾讯 AIHR
-
----
-
-## 🤝 致谢
-
-- [React](https://react.dev/) - 前端框架
-- [Vite](https://vitejs.dev/) - 构建工具
-- [Tailwind CSS](https://tailwindcss.com/) - 样式方案
-- [Framer Motion](https://www.framer.com/motion/) - 动画库
-- [Recharts](https://recharts.org/) - 图表库
-- [Lucide](https://lucide.dev/) - 图标库
